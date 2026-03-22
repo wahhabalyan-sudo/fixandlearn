@@ -2,45 +2,78 @@
 <html lang="en">
 <head>
     <title>FixAndLearn</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body { font-family: Arial; margin:0; background:#f4f6f8; }
+        header, footer { background:#222; color:white; text-align:center; padding:15px; }
+        nav { background:#444; text-align:center; padding:10px; }
+        nav a { color:white; margin:10px; text-decoration:none; display:inline-block; transition:0.3s; }
+        nav a:hover { background:black; padding:5px 10px; border-radius:5px; }
+        .container { max-width:1000px; margin:auto; padding:20px; }
+        .hero { background:white; padding:25px; border-radius:10px; text-align:center; margin-bottom:20px; }
+        .cards { display:flex; gap:15px; flex-wrap:wrap; }
+        .card {
+            background:white; padding:20px; border-radius:10px;
+            flex:1 1 250px;
+            box-shadow:0 2px 6px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+        .card:hover {
+            transform:translateY(-5px);
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+        }
+        .card a {
+            display:inline-block; margin-top:10px;
+            padding:10px 15px; background:#222; color:white;
+            text-decoration:none; border-radius:5px;
+        }
+        @media(max-width:600px){
+            nav a{display:block;}
+            .cards{flex-direction:column;}
+        }
+    </style>
 </head>
 <body>
 
 <header>
     <h1>FixAndLearn</h1>
-    <p>Learn Skills & Fix Problems Easily</p>
 </header>
 
 <nav>
-    <a href="#">Home</a>
+    <a href="index.html">Home</a>
     <a href="blog.html">Blog</a>
+    <a href="age.html">Age Calculator</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy Policy</a>
 </nav>
 
 <div class="container">
-    <div class="card">
-        <h2>Age Calculator</h2>
-        <p>Calculate your age instantly using our free tool.</p>
-        <a href="age.html">Open Tool</a>
+
+    <div class="hero">
+        <h2>Welcome 🚀</h2>
+        <p>Learn skills, fix problems, and use free tools.</p>
     </div>
 
-    <div class="card">
-        <h2>Math Practice Questions</h2>
-        <p>Learn and practice math with easy examples.</p>
-    </div>
+    <div class="cards">
+        <div class="card">
+            <h3>📘 Blog</h3>
+            <p>Read helpful tutorials and guides.</p>
+            <a href="blog.html">Visit</a>
+        </div>
 
-    <div class="card">
-        <h2>Fix PC Problems</h2>
-        <p>Simple guides to solve common computer issues.</p>
-    </div>
+        <div class="card">
+            <h3>🧮 Age Calculator</h3>
+            <p>Calculate your age instantly.</p>
+            <a href="age.html">Open</a>
+        </div>
 
-    <div class="card">
-        <h2>Learn HTML & CSS</h2>
-        <p>Step-by-step tutorials for beginners.</p>
+        <div class="card">
+            <h3>🛠 Tech Help</h3>
+            <p>Fix common computer issues.</p>
+            <a href="blog.html">Learn</a>
+        </div>
     </div>
-
 
 </div>
 

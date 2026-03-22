@@ -1,106 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Age Calculator - FixAndLearn</title>
+    <title>Age Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
-        body {
-            font-family: Arial;
-            margin: 0;
-            background: #f4f4f4;
-        }
-        header, footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-        nav {
-            background: #555;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 10px;
-            text-decoration: none;
-        }
-        .container {
-            max-width: 500px;
-            margin: 30px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-        }
-        input {
-            padding: 10px;
-            width: 80%;
-            margin: 10px 0;
-        }
-        button {
-            padding: 10px 15px;
-            background: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        #result {
-            margin-top: 15px;
-            font-size: 18px;
-            color: green;
-        }
+        body { font-family: Arial; margin:0; background:#f4f6f8; text-align:center; }
+        header, footer { background:#222; color:white; padding:15px; }
+        .box { max-width:400px; margin:auto; background:white; padding:20px; border-radius:10px; }
+        input, button { padding:10px; margin:10px; width:80%; }
+        button { background:#222; color:white; border:none; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>FixAndLearn</h1>
-</header>
+<header><h1>Age Calculator</h1></header>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="blog.html">Blog</a>
-    <a href="age.html">Age Calculator</a>
-    <a href="contact.html">Contact</a>
-</nav>
-
-<div class="container">
-    <h2>Age Calculator</h2>
-
-    <p>Select your birth date:</p>
+<div class="box">
     <input type="date" id="dob">
-
-    <br>
-    <button onclick="calculateAge()">Calculate Age</button>
-
-    <div id="result"></div>
+    <button onclick="calc()">Calculate</button>
+    <h2 id="result"></h2>
 </div>
 
-<footer>
-    <p>© 2026 FixAndLearn</p>
-</footer>
+<footer>© 2026 FixAndLearn</footer>
 
 <script>
-function calculateAge() {
+function calc(){
     let dob = document.getElementById("dob").value;
-    let result = document.getElementById("result");
+    if(!dob){ alert("Select date"); return; }
 
-    if (!dob) {
-        result.innerHTML = "Please select your birth date!";
-        return;
-    }
-
-    let birthDate = new Date(dob);
+    let birth = new Date(dob);
     let today = new Date();
+    let age = today.getFullYear() - birth.getFullYear();
 
-    let age = today.getFullYear() - birthDate.getFullYear();
-    let month = today.getMonth() - birthDate.getMonth();
-
-    if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-    }
-
-    result.innerHTML = "Your Age is: " + age + " years";
+    document.getElementById("result").innerText = "Your Age: " + age;
 }
 </script>
 
